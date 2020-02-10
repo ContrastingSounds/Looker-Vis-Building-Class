@@ -48,17 +48,7 @@ var vegaLiteDefinition = {
           },
           "shape": {
             "value": "circle",
-            "condition": [
-              {"test": "datum['point_class'] == 'minus' ", "value": "circle"},
-              {"test": "datum['point_class'] == 'plus' ", "value": "cross"}
-            ]
           },
-          "color": {
-            "condition": [
-              {"test": "datum['point_class'] == 'minus' ", "value": "red"},
-              {"test": "datum['point_class'] == 'plus' ", "value": "blue"}
-            ]
-          }
         }
       },
       {
