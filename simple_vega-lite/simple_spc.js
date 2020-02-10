@@ -114,7 +114,7 @@ var vegaLiteDefinition = {
         },
         "encoding": {
           "y": {
-            "field": "mean_minus_2sd_copy",
+            "field": "mean_minus_2sd",
             "type": "quantitative",
             "title": "Transaction Value"
           },

@@ -159,7 +159,7 @@ class SimpleLookerData {
 
   classifyDataPoints() {
     this.jsonData.forEach(r => {
-      if (r.trans_total_transaction_value >= r.mean) {
+      if (r[this.config.batch_value] >= r[this.config.mean]) {
         r.point_class = 'plus'
       } else {
         r.point_class = 'minus'
