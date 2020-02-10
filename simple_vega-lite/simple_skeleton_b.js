@@ -42,7 +42,8 @@ const buildSPCChart = function(element) {
       "actions": false,
       "theme": "latimes",
   }
-  
+
+  // HTML Container – Vis specification – Vega Configuration 
   vegaEmbed('#spcContainer', vegaLiteDefinition, vegaConfig).catch(console.warn)
 }
 
