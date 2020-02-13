@@ -24,17 +24,19 @@ const getVegaLiteDefinition = function(lookerData, element) {
       {
         "mark": {
           "type": "line", 
-          "color": "lightgrey"
+          "color": "lightgrey",
+          "tooltip": {"content": "data"},
         },
         "encoding": {
           "x": {
             "field": lookerData.config.batch_number, 
             "type": "quantitative", 
-            "title": "Day"
+            "title": "Batch Number"
           },
           "y": {
             "field": lookerData.config.batch_value, 
-            "type": "quantitative"
+            "type": "quantitative",
+            "scale": {"zero": false},
           },
         }
       },
@@ -44,16 +46,18 @@ const getVegaLiteDefinition = function(lookerData, element) {
           "size": 75,
           "color": "green",
           "filled": true,
+          "tooltip": {"content": "data"},
         },
         "encoding": {
           "x": {
             "field": lookerData.config.batch_number, 
             "type": "quantitative", 
-            "title": "Day"
+            "title": "Batch Number"
           },
           "y": {
             "field": lookerData.config.batch_value, 
-            "type": "quantitative"
+            "type": "quantitative",
+            "scale": {"zero": false},
           },
           "shape": {
             "value": "circle",
@@ -73,15 +77,16 @@ const getVegaLiteDefinition = function(lookerData, element) {
       {
         "mark": {
             "type": "rule",
-            "strokeDash": [12, 12]
+            "tooltip": {"content": "data"},
         },
         "encoding": {
           "y": {
             "field": lookerData.config.batch_value,
             "type": "quantitative",
             "aggregate": "mean",
+            "scale": {"zero": false},
           },
-          "color": {"value": "red"},
+          "color": {"value": "grey"},
         }
       },
       {
@@ -90,16 +95,18 @@ const getVegaLiteDefinition = function(lookerData, element) {
           "color": "transparent",
           "opacity": 0.0,
           "borders": {
-            "color": "grey",
+            "color": "orange",
             "opacity": 0.8,
-            "strokeDash": [12, 12]
-          }
+            "strokeDash": [2, 2]
+          },
+          "tooltip": {"content": "data"},
         },
         "encoding": {
           "y": {
             "field": lookerData.config.lower_control_limit,
             "type": "quantitative",
-            "title": "Transaction Value"
+            "title": "Avg. VCC",
+            "scale": {"zero": false},
           },
           "y2": {
             "field": lookerData.config.upper_control_limit
@@ -116,16 +123,18 @@ const getVegaLiteDefinition = function(lookerData, element) {
           "color": "transparent",
           "opacity": 0.0,
           "borders": {
-            "color": "orange",
+            "color": "red",
             "opacity": 0.8,
-            "strokeDash": [2, 2]
-          }
+            "strokeDash": [12, 12]
+          },
+          "tooltip": {"content": "data"},
         },
         "encoding": {
           "y": {
             "field": lookerData.config.lower_spec_limit,
             "type": "quantitative",
-            "title": "Transaction Value"
+            "title": "Avg. VCC",
+            "scale": {"zero": false},
           },
           "y2": {
             "field": lookerData.config.upper_spec_limit
